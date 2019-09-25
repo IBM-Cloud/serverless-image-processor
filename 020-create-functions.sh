@@ -31,6 +31,10 @@ else
     --target-service-instance-id $COS_GUID
 fi
 
+# a simple filter action to ignore unrelated events
+ibmcloud fn action update filter \
+  actions/event-filter.js
+
 # get the key to access to the service
 COS_SERVICE_KEY=$(ibmcloud resource service-key $COS_SERVICE_NAME-for-functions --output json)
 COS_API_KEY=$(echo $COS_SERVICE_KEY | jq -r .[0].credentials.apikey)
@@ -48,9 +52,6 @@ else
     --param bucket $COS_BUCKET_NAME \
     --param event_types create
 fi
-
-ibmcloud fn action update filter \
-  actions/event-filter.js
 
 ibmcloud fn action update thumbnail \
   --param cosApiKey $COS_API_KEY \
