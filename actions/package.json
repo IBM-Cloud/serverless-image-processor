@@ -1,0 +1,11 @@
+{
+  "name": "actions",
+  "version": "1.0.0",
+  "author": "IBM",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "ibm-cos-sdk": "1.5.0",
+    "gm": "1.23.1",
+    "ibm-watson": "4.2.1"
+  }
+}
