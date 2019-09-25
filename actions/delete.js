@@ -28,17 +28,20 @@ async function main(event) {
     };
     const cos = new COS.S3(config);
 
-    const keysToDelete = [
-      `thumbnails/${thumbnailName(event.key)}`,
-      `metadata/${metadataName(event.key)}`,
-    ]
-    keysToDelete.forEach((key) => {
-      console.log(`Deleting ${event.bucket}/${key}...`);
-      await cos.deleteObject({
-        Bucket: event.bucket,
-        Key: key,
-      }).promise();
-    });
+    const thumbnailKey = `thumbnails/${thumbnailName(event.key)}`;
+    console.log(`Deleting ${event.bucket}/${thumbnailKey}...`);
+    await cos.deleteObject({
+      Bucket: event.bucket,
+      Key: thumbnailKey,
+    }).promise();
+
+    const metadataKey = `metadata/${metadataName(event.key)}`;
+    console.log(`Deleting ${event.bucket}/${metadataKey}...`);
+    await cos.deleteObject({
+      Bucket: event.bucket,
+      Key: metadataKey,
+    }).promise();
+
     console.log('[OK] Delete complete');
 
     return event;
