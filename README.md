@@ -37,6 +37,10 @@ The triggers _trigger_ the following actions:
 
 ## Deploy the project
 
+> The scripts do not check permissions. You must ensure you have the right permissions:
+> - to create service instances,
+> - to create Cloud Functions namespaces (you need to be an Administrator on the Functions service)
+
 1. To run the following scripts, make sure to install:
    * [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli)
    * Cloud Object Storage plugin. Install it with `ibmcloud plugin install cloud-object-storage`.
