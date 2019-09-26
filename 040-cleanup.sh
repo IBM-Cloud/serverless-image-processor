@@ -6,7 +6,7 @@ ibmcloud fn trigger delete create-trigger
 ibmcloud fn action delete thumbnail
 ibmcloud fn action delete visualrecognition
 ibmcloud fn action delete on-create
-ibmcloud fn action delete debug
+ibmcloud fn action delete filter
 
 ibmcloud fn rule delete delete-rule
 ibmcloud fn trigger delete delete-trigger
