@@ -18,7 +18,7 @@ else
 fi
 
 echo ">>> Ensuring Cloud Functions plugin is installed"
-if ibmcloud fn list >/dev/null; then
+if ibmcloud fn namespace list >/dev/null; then
   echo "cloud-functions plugin is OK"
 else
   echo "Make sure cloud-functions plugin is properly installed with ibmcloud plugin install cloud-functions."
