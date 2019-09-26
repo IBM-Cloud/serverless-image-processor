@@ -1,4 +1,4 @@
-# Process images saved into a Cloud Object Storage bucket with Cloud Functions
+# Use Cloud Functions to automatically analyze images in Cloud Object Storage
 
 [Cloud Functions](https://cloud.ibm.com/functions) can be extended by [integrating with Cloud Object Storage (COS)](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-pkg_obstorage). The COS trigger type lets you run custom code logic when a new object is stored, updated, or deleted from a designated bucket in COS. 
 
