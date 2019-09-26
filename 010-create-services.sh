@@ -12,7 +12,7 @@ fi
 COS_INSTANCE_ID=$(ibmcloud resource service-instance --output JSON $COS_SERVICE_NAME | jq -r .[0].id)
 echo "Cloud Object Storage CRN is $COS_INSTANCE_ID"
 
-if ibmcloud resource service-key $COS_SERVICE_NAME-for-functions; then
+if ibmcloud resource service-key $COS_SERVICE_NAME-for-functions > /dev/null 2>&1; then
   echo "Service key already exists"
 else
   ibmcloud resource service-key-create $COS_SERVICE_NAME-for-functions Writer --instance-id $COS_INSTANCE_ID
@@ -29,7 +29,7 @@ else
     --region $COS_REGION
 fi
 
-if ibmcloud resource service-instance $VISUAL_RECOGNITION_SERVICE_NAME; then
+if ibmcloud resource service-instance $VISUAL_RECOGNITION_SERVICE_NAME > /dev/null 2>&1; then
   echo "Visual Recognition service $VISUAL_RECOGNITION_SERVICE_NAME already exists"
 else
   echo "Creating Visual Recognition Service..."
@@ -40,7 +40,7 @@ fi
 VISUAL_RECOGNITION_INSTANCE_ID=$(ibmcloud resource service-instance --output JSON $VISUAL_RECOGNITION_SERVICE_NAME | jq -r .[0].id)
 echo "Visual Recognition CRN is $VISUAL_RECOGNITION_INSTANCE_ID"
 
-if ibmcloud resource service-key $VISUAL_RECOGNITION_SERVICE_NAME-for-functions; then
+if ibmcloud resource service-key $VISUAL_RECOGNITION_SERVICE_NAME-for-functions > /dev/null 2>&1; then
   echo "Service key already exists"
 else
   ibmcloud resource service-key-create $VISUAL_RECOGNITION_SERVICE_NAME-for-functions Manager --instance-id $VISUAL_RECOGNITION_INSTANCE_ID
