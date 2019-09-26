@@ -43,7 +43,7 @@ The triggers _trigger_ the following actions:
    * Cloud Functions plugin. Install it with `ibmcloud plugin install cloud-functions`.
    * [jq](https://stedolan.github.io/jq/) command line utility
 
-1. Copy the configuration file and set the values to match your environment.
+1. Copy the configuration file and set the values to match your environment. At a minimum, set or review the values for `PREFIX`, `RESOURCE_GROUP_NAME` and `REGION`.
 
    ```sh
    cp template.local.env local.env
