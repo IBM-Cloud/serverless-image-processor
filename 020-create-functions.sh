@@ -13,7 +13,7 @@ ibmcloud fn property set --namespace $NAMESPACE_INSTANCE_ID
 echo "Namespace Instance ID is $NAMESPACE_INSTANCE_ID"
 
 COS_GUID=$(ibmcloud resource service-instance --output JSON $COS_SERVICE_NAME | jq -r .[0].guid)
-echo "COS GUI is $COS_GUID"
+echo "COS GUID is $COS_GUID"
 
 EXISTING_POLICIES=$(ibmcloud iam authorization-policies --output JSON)
 if echo "$EXISTING_POLICIES" | \
