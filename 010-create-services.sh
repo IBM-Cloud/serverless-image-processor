@@ -34,7 +34,7 @@ if ibmcloud resource service-instance $VISUAL_RECOGNITION_SERVICE_NAME; then
 else
   echo "Creating Visual Recognition Service..."
   ibmcloud resource service-instance-create $VISUAL_RECOGNITION_SERVICE_NAME \
-    watson-vision-combined "$VISUAL_RECOGNITION_PLAN" $REGION || exit 1
+    watson-vision-combined "$VISUAL_RECOGNITION_PLAN" $VISUAL_RECOGNITION_REGION || exit 1
 fi
 
 VISUAL_RECOGNITION_INSTANCE_ID=$(ibmcloud resource service-instance --output JSON $VISUAL_RECOGNITION_SERVICE_NAME | jq -r .[0].id)
