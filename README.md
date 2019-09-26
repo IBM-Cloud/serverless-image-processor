@@ -37,6 +37,12 @@ The triggers _trigger_ the following actions:
 
 ## Deploy the project
 
+1. To run the following scripts, make sure to install:
+   * [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli)
+   * Cloud Object Storage plugin. Install it with `ibmcloud plugin install cloud-object-storage`.
+   * Cloud Functions plugin. Install it with `ibmcloud plugin install cloud-functions`.
+   * [jq](https://stedolan.github.io/jq/) command line utility
+
 1. Copy the configuration file and set the values to match your environment.
 
    ```sh
