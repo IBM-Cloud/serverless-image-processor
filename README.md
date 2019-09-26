@@ -67,6 +67,13 @@ The triggers _trigger_ the following actions:
    ./010-create-services.sh
    ```
 
+   If they do not already exist, the script creates:
+      * a Cloud Object Storage service instance and a service key,
+      * a storage bucket
+      * a Visual Recognition service instance and a service key.
+
+   The previously defined `PREFIX` variable is used to define the names of these resources.
+
 1. Create the actions and the triggers.
 
    ```sh
