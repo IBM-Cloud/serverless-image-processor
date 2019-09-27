@@ -15,11 +15,9 @@ ibmcloud fn action delete on-delete
 NAMESPACE=$PREFIX-actions
 ibmcloud fn namespace delete $NAMESPACE
 
-# COS
-ibmcloud cos delete-bucket --bucket $COS_BUCKET_NAME --region $REGION --force
-ibmcloud resource service-key-delete $COS_SERVICE_NAME-for-functions --force
+# Services
 COS_INSTANCE_ID=$(ibmcloud resource service-instance --output JSON $COS_SERVICE_NAME | jq -r .[0].id)
-ibmcloud resource service-instance-delete $COS_INSTANCE_ID --force
+ibmcloud resource service-instance-delete $COS_INSTANCE_ID --force --recursive
 
 VISUAL_RECOGNITION_INSTANCE_ID=$(ibmcloud resource service-instance --output JSON $VISUAL_RECOGNITION_SERVICE_NAME | jq -r .[0].id)
 ibmcloud resource service-instance-delete $VISUAL_RECOGNITION_INSTANCE_ID --force --recursive

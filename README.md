@@ -97,5 +97,3 @@ To delete the services and Cloud Functions artifacts, run:
    ```sh
    ./040-cleanup.sh
    ```
-
-   > The Cloud Object Storage bucket and service will only be deleted after you remove the uploaded files.
